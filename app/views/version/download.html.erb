@@ -1,0 +1,8 @@
+<ul>
+	<% @file_versions.each do |version| %>
+		<% if version.end_with?('.') or version.end_with('..') %>
+			<% next %>
+		<% end %>
+		<li><%=version%></li>
+	<% end %>
+</ul>
