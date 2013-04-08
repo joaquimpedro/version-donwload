@@ -8,10 +8,10 @@ class VersionController < ApplicationController
 	end
 
 	def index
-		redirect_to(action: "download")
+		redirect_to(action: "list_downloads")
 	end
 
-	def download
+	def list_downloads
 		@file_versions = []
 
 		Dir.foreach(@@version_dir) do |valid_path|
@@ -19,7 +19,7 @@ class VersionController < ApplicationController
 		end
 	end
 
-	def baixar
+	def download
 		send_file(@@version_dir + File::SEPARATOR +  params[:path])
 	end
 end

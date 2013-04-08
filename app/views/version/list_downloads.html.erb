@@ -3,6 +3,6 @@
 		<%if version == '.' or  version == '..'%>
 			<%next%>
 		<%end%>
-		<li><%= link_to version, {action: 'baixar', path: version }%></li>
+		<li><%= link_to version, {action: 'download', path: version }%></li>
 	<% end %>
 </ul>
