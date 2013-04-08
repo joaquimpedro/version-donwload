@@ -6,13 +6,12 @@ class VersionController < ApplicationController
 	end
 
 	def download
-		version_dir = "/home/pedroneto/Downloads"
-
+		config = YAML.load_file("config/properties.yml")
+		version_dir = config['download']
 		@file_versions = []
 
 		Dir.foreach(version_dir) do |valid_path|
-			
-			@file_versions << version_dir + File::SEPARATOR + valid_path
+			@file_versions << valid_path
 		end
 	end
 

@@ -1,5 +1,8 @@
 <ul>
 	<% @file_versions.each do |version| %>
+		<%if version == '.' or  version == '..'%>
+			<%next%>
+		<%end%>
 		<li><%= link_to version, {action: 'baixar', path: version }%></li>
 	<% end %>
 </ul>
