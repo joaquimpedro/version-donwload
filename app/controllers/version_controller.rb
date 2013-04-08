@@ -15,4 +15,8 @@ class VersionController < ApplicationController
 			@file_versions << version_dir + File::SEPARATOR + valid_path
 		end
 	end
+
+	def baixar
+		send_file(params[:path])
+	end
 end
